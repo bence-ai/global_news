@@ -36,7 +36,7 @@ body {
   text-align: right;
 }
 
-hr {
+.nav-hr {
   border: 0;
   height: 1px;
   background-image: linear-gradient(

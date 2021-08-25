@@ -48,7 +48,7 @@ const NavigationBar = (props) => {
                 </form>
             </div>
             <h1 id="name"><a href="/">GLOBAL NEWS</a></h1>
-            <hr/>
+            <hr className="nav-hr"/>
 
             {returnToSearch ? <Redirect to="/search" /> : ""}
         </div>
