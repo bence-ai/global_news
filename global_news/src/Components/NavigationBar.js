@@ -4,7 +4,7 @@ import { Redirect } from "react-router-dom";
 
 const NavigationBar = (props) => {
     // states used to operate the search form
-    const [returnToSearch, setReturnToSearch] = useState(false)
+    const [redirectToSearch, setRedirectToSearch] = useState(false)
     const [searchInput, setSearchInput] = useState("")
 
     // if the input changed in the seach box, update it here as well
@@ -17,7 +17,7 @@ const NavigationBar = (props) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         props.updateSearchTerm(searchInput);
-        setReturnToSearch(true);
+        setRedirectToSearch(true);
     }
 
     // generate the date string we display on the left side of the nav bar
@@ -50,7 +50,7 @@ const NavigationBar = (props) => {
             <h1 id="name"><a href="/">GLOBAL NEWS</a></h1>
             <hr className="nav-hr"/>
 
-            {returnToSearch ? <Redirect to="/search" /> : ""}
+            {redirectToSearch ? <Redirect to="/search" /> : ""}
         </div>
     );
 }
