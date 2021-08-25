@@ -7,6 +7,7 @@ const NavigationBar = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        props.updateSearchTerm();
         setReturnToSearch(true);
     }
     
@@ -21,7 +22,7 @@ const NavigationBar = (props) => {
             <div className="nav-elements">
                 <br/>
                 <form onSubmit={handleSubmit}>
-                    <input className="search" type="text" placeholder="Search..." value={props.search} onChange={e => props.handleSearchUpdate(e.target.value)} />
+                    <input className="search" type="text" placeholder="Search..." value={props.searchInput} onChange={e => props.handleSearchInputUpdate(e.target.value)} />
                 </form>
             </div>
             <h1 id="name"><a href="/">GLOBAL NEWS</a></h1>
