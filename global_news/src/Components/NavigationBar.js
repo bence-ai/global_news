@@ -4,11 +4,16 @@ import { Redirect } from "react-router-dom";
 
 const NavigationBar = (props) => {
     const [returnToSearch, setReturnToSearch] = useState(false)
+    const [searchInput, setSearchInput] = useState("")
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        props.updateSearchTerm();
+        props.updateSearchTerm(searchInput);
         setReturnToSearch(true);
+    }
+
+    const handleSearchInputUpdate = (value) => {
+        setSearchInput(value);
     }
     
     if (returnToSearch) {
@@ -22,7 +27,7 @@ const NavigationBar = (props) => {
             <div className="nav-elements">
                 <br/>
                 <form onSubmit={handleSubmit}>
-                    <input className="search" type="text" placeholder="Search..." value={props.searchInput} onChange={e => props.handleSearchInputUpdate(e.target.value)} />
+                    <input className="search" type="text" placeholder="Search..." value={props.searchInput} onChange={e => handleSearchInputUpdate(e.target.value)} />
                 </form>
             </div>
             <h1 id="name"><a href="/">GLOBAL NEWS</a></h1>
