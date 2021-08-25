@@ -1,6 +1,18 @@
 import './NavigationBar.css'
+import { useState } from 'react';
+import { Redirect } from "react-router-dom";
 
-const NavigationBar = () => {
+const NavigationBar = (props) => {
+    const [returnToSearch, setReturnToSearch] = useState(false)
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        setReturnToSearch(true);
+    }
+    
+    if (returnToSearch) {
+        return <Redirect to="/search" />
+    }
     return (
         <div id="nav-bar">
             <div className="nav-elements">
@@ -8,8 +20,8 @@ const NavigationBar = () => {
             </div>
             <div className="nav-elements">
                 <br/>
-                <form>
-                    <input className="search" type="text" placeholder="Search.." />
+                <form onSubmit={handleSubmit}>
+                    <input className="search" type="text" placeholder="Search..." value={props.search} onChange={e => props.handleSearchUpdate(e.target.value)} />
                 </form>
             </div>
             <h1 id="name"><a href="/">GLOBAL NEWS</a></h1>
