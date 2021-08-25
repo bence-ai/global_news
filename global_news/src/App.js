@@ -12,6 +12,10 @@ function App() {
     setSearchTerm(value);
   }
 
+  const updateSearchCountry = (value) => {
+    setCountry(value);
+  }
+
   return (
     <div className="App">
       <BrowserRouter>
