@@ -7,7 +7,7 @@ import { useState } from 'react';
 function App() {
   // values we will search based on
   const [searchTerm, setSearchTerm] = useState("")
-  const [country, setCountry] = useState("hu")
+  const [country, setCountry] = useState("")
 
   //!! Warning:
   // Updating these will cause to search (request) again immidietly!
