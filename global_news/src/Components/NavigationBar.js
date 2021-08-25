@@ -50,20 +50,4 @@ const getDate = () => {
     return [year, month, day].join('-');
 }
 
-const getTime = () => {
-    var date = new Date(),
-        hours = '' + (date.getHours()),
-        minutes = '' + date.getMinutes(),
-        seconds = date.getSeconds();
-
-    if (hours.length < 2) 
-        hours = '0' + hours;
-    if (minutes.length < 2) 
-        minutes = '0' + minutes;
-    if (seconds.length < 2) 
-        seconds = '0' + seconds;
-
-    return [hours, minutes, seconds].join(':');
-}
-
 export default NavigationBar
