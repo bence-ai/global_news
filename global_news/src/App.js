@@ -5,13 +5,20 @@ import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import { useState } from 'react';
 
 function App() {
+  // values we will search based on
   const [searchTerm, setSearchTerm] = useState("")
   const [country, setCountry] = useState("hu")
 
+  //!! Warning:
+  // Updating these will cause to search (request) again immidietly!
+  // When handling user input, you should use local fields (see searchInput for example in NavigationBar.js),
+  // and only update these, once the user has pressed enter to start their actual search
+  //   update the search term
   const updateSearchTerm = (value) => {
     setSearchTerm(value);
   }
 
+  //   update the search country
   const updateSearchCountry = (value) => {
     setCountry(value);
   }
