@@ -15,6 +15,20 @@ const NavigationBar = (props) => {
     const handleSearchInputUpdate = (value) => {
         setSearchInput(value);
     }
+
+    const getDate = () => {
+        var date = new Date(),
+            month = '' + (date.getMonth() + 1),
+            day = '' + date.getDate(),
+            year = date.getFullYear();
+    
+        if (month.length < 2) 
+            month = '0' + month;
+        if (day.length < 2) 
+            day = '0' + day;
+    
+        return [year, month, day].join('-');
+    }
     
     if (returnToSearch) {
         return <Redirect to="/search" />
@@ -36,18 +50,6 @@ const NavigationBar = (props) => {
     );
 }
 
-const getDate = () => {
-    var date = new Date(),
-        month = '' + (date.getMonth() + 1),
-        day = '' + date.getDate(),
-        year = date.getFullYear();
 
-    if (month.length < 2) 
-        month = '0' + month;
-    if (day.length < 2) 
-        day = '0' + day;
-
-    return [year, month, day].join('-');
-}
 
 export default NavigationBar
