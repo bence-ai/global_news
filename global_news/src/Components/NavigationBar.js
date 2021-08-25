@@ -7,7 +7,10 @@ const NavigationBar = () => {
                 <h3 id="date">{ getDate() }</h3>
             </div>
             <div className="nav-elements">
-                <h3 id="price">{ getTime() }</h3>
+                <br/>
+                <form>
+                    <input className="search" type="text" placeholder="Search.." />
+                </form>
             </div>
             <h1 id="name"><a href="/">GLOBAL NEWS</a></h1>
             <hr/>
