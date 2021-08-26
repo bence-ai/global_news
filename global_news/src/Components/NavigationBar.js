@@ -1,6 +1,6 @@
 import './NavigationBar.css'
-import { useState } from 'react';
-import { Redirect } from "react-router-dom";
+import { useState } from 'react'
+import { Redirect } from "react-router-dom"
 
 const NavigationBar = (props) => {
     // states used to operate the search form
