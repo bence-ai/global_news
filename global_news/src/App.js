@@ -1,8 +1,8 @@
 import NavigationBar from './Components/NavigationBar.js'
 import Homepage from './Components/Homepage'
-import FilteredNews from './Components/FilteredNews';
-import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
-import { useState } from 'react';
+import FilteredNews from './Components/FilteredNews'
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom"
+import { useState } from 'react'
 
 function App() {
   // values we will search based on
@@ -29,7 +29,7 @@ function App() {
           <NavigationBar updateSearchTerm={updateSearchTerm}/>
           <Switch>
             <Route path="/" component={Homepage} exact />
-            <Route path="/search" render={(props) => (<FilteredNews language={country} searchTerm={searchTerm} />)} />
+            <Route path="/search" render={() => (<FilteredNews language={country} searchTerm={searchTerm} />)} />
             <Redirect to="/" />
           </Switch>
         </BrowserRouter>
