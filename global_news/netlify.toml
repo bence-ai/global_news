@@ -1,0 +1,4 @@
+[build]
+base = "global_news/"
+publish = "global_news/build/"
+command = "npm run build"
