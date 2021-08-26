@@ -3,12 +3,11 @@ import axios from 'axios'
 
 const FilteredNews = ( {language, searchTerm, page} ) => {
     const [news, setNews] = useState([]);
-    const url = "https://newsapi.org/v2/everything?q=" + searchTerm + "&pagesize=10" + "&language=" + language + "&page=" + page + "&apiKey=6978740ff320434a9ef38606f359cbb2";
+    const url = "https://newsapi.org/v2/everything?q=" + searchTerm + "&pagesize=10&language=" + language + "&page=" + page + "&apiKey=6978740ff320434a9ef38606f359cbb2";
 
     useEffect(() => {
         axios.get(url)
             .then(res => {
-                console.log(res.data.articles);
                 setNews(res.data.articles);
             })
     }, [url])
