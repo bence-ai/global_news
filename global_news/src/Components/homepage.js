@@ -60,8 +60,8 @@ function MainNewsList() {
 
     const [mainNews, setMainNews] = useState([]);
     const [leftBar, setLeftbar] = useState([]);
-    const url = "https://newsapi.org/v2/everything?domains=wsj.com&apiKey=6978740ff320434a9ef38606f359cbb2&pagesize=39"
-    const urlLeft = "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=6978740ff320434a9ef38606f359cbb2&pagesize=10";
+    const url = "https://newsapi.org/v2/everything?domains=wsj.com&apiKey=faad73f4c2ea4060b5f47d0867ee3a23&pagesize=39"
+    const urlLeft = "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=faad73f4c2ea4060b5f47d0867ee3a23&pagesize=10";
 
     useEffect(() => {
        axios.get(urlLeft)

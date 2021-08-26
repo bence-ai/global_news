@@ -55,7 +55,7 @@ const FilteredNews = ( {language, searchTerm} ) => {
 
     const [news, setNews] = useState([]);
     const [page, setPage] = useState(1);
-    const url = "https://newsapi.org/v2/everything?q=" + searchTerm + "&pagesize=10&language=" + language + "&page=" + page + "&apiKey=6978740ff320434a9ef38606f359cbb2";
+    const url = "https://newsapi.org/v2/everything?q=" + searchTerm + "&pagesize=10&language=" + language + "&page=" + page + "&apiKey=faad73f4c2ea4060b5f47d0867ee3a23";
 
     const nextPage = () => {
         setPage(page > 5 ? 6 : page + 1);
