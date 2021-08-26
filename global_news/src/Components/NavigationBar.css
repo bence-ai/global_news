@@ -1,5 +1,6 @@
 body {
-  background-color: #e0d3af;
+  background-color: #433b1e;
+  color: #f1ffff;
 }
 
 #nav-bar {
@@ -12,7 +13,7 @@ body {
   width: 50%;
 
   text-decoration: none;
-  color: black;
+  color: #f1ffff;
 }
 
 .nav-elements #date {
@@ -26,14 +27,19 @@ body {
   margin-right: 30px;
 
   width: 150px;
+  color: #f1ffff;
 
   background-color: rgba(0, 0, 0, 0);
   border: 0;
-  border-bottom: 2px solid black;
-
+  border-bottom: 2px solid #f1ffff;
   font-size: 1.05em;
   font-family: "Playfair Display", serif;
   text-align: right;
+}
+
+::placeholder {
+  color: whitesmoke;
+  opacity: 1;
 }
 
 .nav-hr {
