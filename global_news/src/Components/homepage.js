@@ -18,7 +18,7 @@ function MainNewsList() {
     const Li = styled.li`
         background-color: whitesmoke;
         padding: 12px;
-        display: flex;
+        display: block;
         align-items: center;
         justify-content: center;
         min-height: 90px;
@@ -59,9 +59,10 @@ function MainNewsList() {
        axios.get(urlLeft)
         .then(res => {
             setLeftbar(res.data.articles)
+            
         })
     }, [urlLeft])
-   
+    console.dir(mainNews);
     useEffect(() => {
         axios.get(url)
             .then(res => {
@@ -72,18 +73,22 @@ function MainNewsList() {
     return(
         <Main>
             <Card>
-                <ul>
+                <div>
                     {
                     mainNews.map(news => <Li key={news.title}> <A href={news.url}>{news.title}</A></Li>)
                     }
-                </ul>
+                </div>
             </Card>
             <Card2>
-                <ul>
+                <div>
                     {
-                    leftBar.map(news => <Li key={news.title}> <A href={news.url}>{news.title}</A></Li>)
+                    leftBar.map(news => <Li key={news.title}> <h3><A href={news.url}>{news.title}</A></h3><br/>
+                               <p>{news.content}</p>
+                               <p>{news.description}</p>
+                               <span>{news.publishedAt}</span>
+                                </Li>)
                     }
-                </ul>
+                </div>
             </Card2>
         </Main>
     )
