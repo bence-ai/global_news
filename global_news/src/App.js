@@ -1,6 +1,8 @@
 import NavigationBar from './Components/NavigationBar.js'
 import Homepage from './Components/Homepage'
 import FilteredNews from './Components/FilteredNews'
+import Categories from './Components/Categories'
+import Category from './Components/Category'
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom"
 import { useState } from 'react'
 
@@ -29,6 +31,8 @@ function App() {
           <NavigationBar updateSearchTerm={updateSearchTerm}/>
           <Switch>
             <Route path="/" component={Homepage} exact />
+            <Route path="/categories" component={Categories} />
+            <Route path="/category" component={Category} />
             <Route path="/search" render={() => (<FilteredNews language={country} searchTerm={searchTerm} />)} />
             <Redirect to="/" />
           </Switch>
